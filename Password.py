@@ -4,12 +4,18 @@ from tkinter.scrolledtext import ScrolledText
 import tkinter.font
 import random, pyperclip, os, pyAesCrypt
 
+# Handles password generation
 Letter = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 Numbers = '0123456789'
 password = ''
+
+# Password required to unlock password viewer
+# Replace this with a password of your choosing
+PASS = 'HelloWorld!'
+
+# Handles password file encryption and decryption
 path = 'Pass.txt'
 e_path = 'Pass.txt.aes'
-PASS = 'HelloWorld!'
 bufferSize = 64 * 1024
 psswdviewed = False
 all_pass = ''
@@ -17,6 +23,7 @@ all_pass = ''
 
 class App():
     def __init__(self, master):
+        # Create GUI
         self.master = master
         self.master.geometry('300x400')
         self.master.title('Password Manager')
